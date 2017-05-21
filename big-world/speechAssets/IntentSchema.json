@@ -1,0 +1,22 @@
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "country",
+          "type": "AMAZON.Country"
+        }
+      ],
+      "intent": "PopulationIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

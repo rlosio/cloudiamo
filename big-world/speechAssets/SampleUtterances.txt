@@ -1,0 +1,13 @@
+PopulationIntent I am alone
+PopulationIntent am I alone in the world
+PopulationIntent I am alone in the world
+PopulationIntent how many people live today in {country}
+PopulationIntent tell me the population of {country}
+PopulationIntent am I alone in {country}
+PopulationIntent how many people live in {country}
+PopulationIntent tell me how many people live in {country}
+PopulationIntent am I alone in {country}
+PopulationIntent what is the population of {country}
+PopulationIntent how many people live in {country}
+PopulationIntent is {country} growing
+PopulationIntent {country}

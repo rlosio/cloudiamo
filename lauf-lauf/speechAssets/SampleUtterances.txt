@@ -1,0 +1,10 @@
+GetNewFactIntent etwas
+GetNewFactIntent erzähl mir einen Fakt
+GetNewFactIntent etwas ueber das Laufen
+GetNewFactIntent erzähl mir etwas zum Laufen
+GetNewFactIntent erzähl mir etwas
+GetNewFactIntent Gib mir ein paar Informationen
+GetNewFactIntent Gib mir ein paar Fakten
+GetNewFactIntent Gib mir einen Fakt
+GetNewFactIntent Gib mir ein paar Informationen zum Laufen
+GetNewFactIntent Sag mir etwas
