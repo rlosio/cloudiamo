@@ -1,8 +1,7 @@
-# Alexa Skills by Renato Losio (cloudiamo.com)
+# Alexa Skills by Renato Losio
 
 
-These are simple skills that I build during Alexa events in Berlin or to grab a free hoodie from Amazon and tries the technology. 
-
+These are simple skills that I build during Alexa events in Berlin or to grab a free hoodie from Amazon and try the technology. Nothing fancy and nothing complicated.
 
 More at "Build a Alexa skill in (about) one hour"
 
