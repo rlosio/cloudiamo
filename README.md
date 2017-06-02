@@ -1,7 +1,7 @@
-# Alexa Skills by cloudiamo.com (aka Renato) 
+# Alexa Skills by http://www.cloudiamo.com (aka Renato) 
 
 
-These are simple skills that I build during Alexa events in Berlin or to grab a free hoodie from Amazon and try the technology. Nothing fancy and nothing complicated.  "RaceBase World" is the v1 of the Amayon skill for http://racebase.world/
+These are simple skills that I build during Alexa events in Berlin or to grab a free hoodie from Amazon and try the technology. Nothing fancy and nothing complicated.  "RaceBase World" is the v1 of the Amazon skill for http://racebase.world/
 
 More at "Build a Alexa skill in (about) one hour"
 
