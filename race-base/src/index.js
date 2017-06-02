@@ -544,6 +544,12 @@ function httpsGet(myData, myDistance, callback) {
                 // raceLocation     = JSON.parse(returnData).body.raceevents[0].\\location;
                raceDate = JSON.parse(returnData).body.raceevents[0].races[0].date;
             }
+            
+            // Remove not alphanumeric characters from race name, for example "Mont Blanc Marathon" instead of "Mont-Blanc Marathon"
+            
+            if (raceName != null){
+                raceName = raceName.replace(/\W/g, ' ');
+            }
 
             callback(raceName,raceLocation,raceDate);  // this will execute whatever function the caller defined, with one argument
 
