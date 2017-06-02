@@ -11,6 +11,14 @@ All the content released under Apache License, Version 2.0
 
 http://www.apache.org/licenses/LICENSE-2.0
 
-"lauf lauf" is currently available in DE only. "Big World" is currently available as EN-US only but it will come soon to DE too.
 
+"RaceBase World" is the v1 of the Amayon skill for http://racebase.world/
+
+Noteds:
+
+1) "lauf lauf" is currently available in DE only. 
+
+2) "Big World" is currently available as EN-US only but it will come soon to DE too.
+
+3) "race base" is currently available as EN-UK only.
 
