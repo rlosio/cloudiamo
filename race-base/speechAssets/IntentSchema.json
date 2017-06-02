@@ -1,0 +1,26 @@
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "distance",
+          "type": "LIST_OF_DISTANCES"
+        },
+        {
+          "name": "city",
+          "type": "AMAZON.EUROPE_CITY"
+        }
+      ],
+      "intent": "RaceBaseIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+RaceBaseIntent something
+RaceBaseIntent where I can run
+RaceBaseIntent to find a {distance} in {city}
+RaceBaseIntent what is the next {distance} in {city}
+RaceBaseIntent where to run a {distance} in {city}
+RaceBaseIntent find a {distance} in {city}
+RaceBaseIntent where I can run in {city}
+RaceBaseIntent where I can run a {distance} in {city}
