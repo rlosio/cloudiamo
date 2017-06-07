@@ -12,14 +12,12 @@ https://cloudiamo.com/2017/04/04/build-a-alexa-skill-in-about-one-hour/
 
 http://www.apache.org/licenses/LICENSE-2.0
 
+
+Notes:
+
+1) "lauf lauf" is currently available in DE only. Skill live
+
+2) "Big World" is currently available as EN-US only but it will come soon to DE too. Skill live
  
-"RaceBase World" is the v1 of the Amayon skill for http://racebase.world/
-
-Noteds:
-
-1) "lauf lauf" is currently available in DE only. 
-
-2) "Big World" is currently available as EN-US only but it will come soon to DE too.
-
-3) "race base" is currently available as EN-UK only.
+3) "race base" is currently available as EN-UK only. Skill live
 
