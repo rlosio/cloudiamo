@@ -1,200 +1,101 @@
+var LIST_DISTANCES = [
+"marathon",
+"half marathon",
+"10 K race",
+"10000 meters race",
+"ultra marathon",
+"trail marathon",
+"trail half marathon",
+"road marathon",
+"road race",
+"road half marathon",
+"race",
+"5 K race",
+"5000 meters race",
+"10 miles race",
+"trail race"];
 
 var LIST_COUNTRIES = [
-    "Afghanistan",
     "Albania",
     "Algeria",
-    "Angola",
-    "Antigua and Barbuda",
     "Egypt",
     "Argentina",
     "Armenia",
     "Australia",
     "Austria",
-    "Azerbaijan",
-    "The Bahamas",
     "Bahrain",
-    "Bangladesh",
-    "Barbados",
-    "Belarus",
     "Belgium",
     "Belize",
-    "Benin",
-    "Bhutan",
-    "Bolivia",
     "Bosnia and Herzegovina",
     "Botswana",
     "Brazil",
-    "Brunei",
     "Bulgaria",
-    "Burkina Faso",
-    "Burundi",
     "Cabo Verde",
     "Cambodia",
-    "Cameroon",
     "Canada",
-    "Chad",
-    "Channel Islands",
     "Chile",
     "China",
     "Hong Kong",
     "Macao",
     "Colombia",
-    "Comoros",
-    "Congo",
-    "Costa Rica",
     "Croatia",
     "Cuba",
-    "Curacao",
     "Cyprus",
     "Czech Republic",
-    "North Korea",
     "Denmark",
-    "Djibouti",
-    "Dominican Republic",
-    "Ecuador",
-    "El Salvador",
-    "Equatorial Guinea",
-    "Eritrea",
     "Estonia",
-    "Ethiopia",
-    "Micronesia",
-    "Fiji",
     "Finland",
     "France",
-    "French Guiana",
-    "French Polynesia",
     "Macedonia",
-    "Gabon",
-    "Gambia",
     "Georgia",
     "Germany",
-    "Ghana",
     "Greece",
-    "Grenada",
-    "Guadeloupe",
-    "Guam",
     "Guatemala",
-    "Guinea",
-    "Guinea-Bissau",
     "Guyana",
-    "Haiti",
-    "Honduras",
     "Hungary",
     "Iceland",
     "India",
     "Indonesia",
-    "Iran",
-    "Iraq",
     "Ireland",
     "Israel",
     "Italy",
     "Jamaica",
     "Japan",
     "Jordan",
-    "Kazakhstan",
     "Kenya",
-    "Kiribati",
-    "Kuwait",
-    "Lao",
     "Latvia",
-    "Lebanon",
-    "Lesotho",
-    "Liberia",
-    "Libya",
     "Lithuania",
     "Luxembourg",
     "Madagascar",
-    "Malawi",
-    "Malaysia",
-    "Maldives",
-    "Mali",
     "Malta",
-    "Martinique",
-    "Mauritania",
-    "Mauritius",
-    "Mayotte",
-    "Melanesia",
     "Mexico",
-    "Micronesia",
     "Moldova",
     "Mongolia",
     "Montenegro",
     "Morocco",
-    "Mozambique",
-    "Myanmar",
     "Namibia",
     "Nepal",
     "The Netherlands",
-    "New Caledonia",
     "New Zealand",
-    "Nicaragua",
-    "Niger",
-    "Nigeria",
     "Norway",
-    "Oman",
-    "Pakistan",
-    "Panama",
-    "Papua New Guinea",
-    "Paraguay",
-    "Peru",
-    "Philippines",
     "Poland",
-    "Polynesia",
     "Portugal",
-    "Puerto Rico",
-    "Qatar",
-    "Reunion",
-    "RB-de-Venezuela",
     "South Korea",
-    "Yemen",
     "Romania",
     "Russia",
-    "Rwanda",
-    "St-Lucia",
-    "Samoa",
-    "Saudi Arabia",
-    "Senegal",
     "Serbia",
-    "Seychelles",
-    "Sierra Leone",
     "Singapore",
-    "Slovak Republic",
     "Slovenia",
-    "Solomon Islands",
-    "Somalia",
     "Spain",
     "Sri Lanka",
-    "West Bank and Gaza",
-    "Sub-Saharan Africa",
-    "Sudan",
-    "Suriname",
-    "Swaziland",
     "Sweden",
     "Switzerland",
-    "Syria",
-    "Tajikistan",
-    "Tanzania",
     "Thailand",
-    "Timor-Leste",
-    "Togo",
-    "Tonga",
-    "Trinidad and Tobago",
     "Tunisia",
     "Turkey",
-    "Turkmenistan",
-    "Uganda",
-    "Ukraine",
-    "United Arab Emirates",
-    "United Kingdom",
-    "United States",
-    "Virgin Islands",
-    "Uruguay",
-    "Uzbekistan",
-    "Vanuatu",
-    "Vietnam",
-    "World",
-    "Zambia",
-    "Zimbabwe"];
+    "the United Kingdom",
+    "the United States",
+    "Uruguay"];
     
 var Alexa = require('alexa-sdk');
 
@@ -206,7 +107,7 @@ exports.handler = function(event, context, callback) {
 
 var ERROR_MESSAGES = [
 "The race base database is growing as we speak. But we could not find data for your request",
-"Sorry, there are many running events in the world but I could not answer your request. Try with a country name or ask for help",
+"Sorry, there are many running events in the world but I could not answer your request. Try with a country or city name or ask for help",
 "Sorry, it is a big world but we could not handle your request at this time. Try again with the name of a country or a city'"
 ]
 
@@ -233,9 +134,6 @@ var WELCOME_MESSAGES = [
 "",
 "",
 "",
-"Trail or road races?",
-"",
-"",
 ""
 ]
 
@@ -248,7 +146,7 @@ var handlers = {
         var helpIndex = Math.floor(Math.random() * LIST_COUNTRIES.length);
         var helpMessage = LIST_COUNTRIES[helpIndex];
                     
-        var speechOutput = "The race base database is growing as we speak, how can I help you? Try a country or a city,  for example " + helpMessage;
+        var speechOutput = "The race base database is growing as we speak, how can I help you? Try with the name of a country or a city, for example find a marathon in " + helpMessage;
         var reprompt = "How can I help you?";
         this.emit(':ask', speechOutput, reprompt);
     },
@@ -261,7 +159,7 @@ var handlers = {
     'RaceBaseIntent': function () {
 
         // default is entire World scenario if no intent city
-        var myRequest = 'World';
+        var myRequest = 'United Kingdom';
         // default is marathon is not intent distance
         var myDistance = 'marathon';
 
@@ -276,17 +174,22 @@ var handlers = {
             }
             
             if (myRequest == null || myRequest == ''){
-                  myRequest = 'World'; 
+                  myRequest = 'United Kingdom'; 
             }
             if (myDistance == null || myDistance == ''){
                   myDistance = 'marathon'; 
             } 
             
+        }  else {
+                var distanceIndex = Math.floor(Math.random() * LIST_DISTANCES.length);
+                myDistance = LIST_DISTANCES[distanceIndex];
         }
         
         console.log("myRequest  : "+ myRequest);
         console.log("myDistance : "+ myDistance);
         
+        
+        // No support of stats yet!
         if (myRequest.toUpperCase() == 'WORLD'){
             var helpIndex = Math.floor(Math.random() * LIST_COUNTRIES.length);
             myRequest = LIST_COUNTRIES[helpIndex];
@@ -319,6 +222,13 @@ var handlers = {
                                 var errorMessage = ERROR_MESSAGES[errorIndex];
                                 this.emit(':tell', errorMessage);
                      } else {
+                         
+                         // default for skill EN-UK is UK, fix the "the" in response
+                         
+                         if (myRequest.toUpperCase() == 'UNITED KINGDOM'){
+                             myRequest = 'the United Kingdom';
+                         }
+                         
                          this.emit(':tell', ' The next ' +  myDistance +' in ' + myRequest  
                          + ' is the ' + myResult + ' on ' + dateResult + '. ' + welcomeMessage);
                          
