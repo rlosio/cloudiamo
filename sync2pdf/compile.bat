@@ -1,0 +1,9 @@
+set LIBDIR=c:\FOP-0.95\lib
+set LOCALCLASSPATH=.
+set LOCALCLASSPATH=%LOCALCLASSPATH%;%LIBDIR%\..\build\fop.jar
+set LOCALCLASSPATH=%LOCALCLASSPATH%;%LIBDIR%\batik-all-1.7.jar
+set LOCALCLASSPATH=%LOCALCLASSPATH%;%LIBDIR%\xercesImpl-2.7.1.jar
+set LOCALCLASSPATH=%LOCALCLASSPATH%;%LIBDIR%\xalan-2.7.0.jar
+
+javac -classpath "%LOCALCLASSPATH%" XML2PDF.java
+jar cf xml2pdf.jar XML2PDF*.class
